@@ -17,7 +17,8 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
       case 'ADD_TODO':
         return {
-            ...state
+            ...state,
+            todos: [...state.todos, {text: action.text, id: Date.now(), completed: false}]
         }
       default:
         return state

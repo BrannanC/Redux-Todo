@@ -8,6 +8,7 @@ const Todo = props => (
       }}
     >
       {props.item.text}
+      <button onClick={e => props.deleteItem(e, props.item.id)} >[X]</button>
     </li>
   )
 

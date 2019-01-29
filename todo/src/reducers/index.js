@@ -15,13 +15,18 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-      case 'ADD_TODO':
-        return {
-            ...state,
-            todos: [...state.todos, {text: action.text, id: Date.now(), completed: false}]
-        }
-      default:
-        return state
+        case 'ADD_TODO':
+            return {
+                ...state,
+                todos: [...state.todos, {text: action.text, id: Date.now(), completed: false}]
+            }
+        case 'TOGGLE_COMPLETED':
+            return {
+                ...state,
+                todos: state.todos.map(item => item.id === action.id ? {...item, completed: !item.completed} : item)
+            }    
+        default:
+            return state
     }
   }
 

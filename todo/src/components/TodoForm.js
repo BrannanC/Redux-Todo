@@ -13,11 +13,11 @@ class TodoForm extends React.Component {
       };
     
     addItem = e => {
-    e.preventDefault();
-    this.props.addTodo(this.state.newItem);
-    this.setState({
-        newItem: ''
-    })
+        e.preventDefault();
+        this.props.addTodo(this.state.newItem);
+        this.setState({
+            newItem: ''
+        })
     };
 
     render(){
